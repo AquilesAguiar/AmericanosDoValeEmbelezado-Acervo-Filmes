@@ -1,0 +1,35 @@
+Movies
+https://api.themoviedb.org/3/search/movie?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&query=avengers&nclude_adult=true
+
+Movies Actors
+https://api.themoviedb.org/3/search/person?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&query=Chris%20Evans&page=1&include_adult=true
+
+Reviwes
+https://api.themoviedb.org/3/movie/24428/reviews?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+Recomendation
+https://api.themoviedb.org/3/movie/24428/similar?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+NOW PLAYING
+https://api.themoviedb.org/3/movie/now_playing?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+POPULARITY
+https://api.themoviedb.org/3/movie/popular?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+UPCOMING
+https://api.themoviedb.org/3/movie/upcoming?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+TV SHOWS
+https://api.themoviedb.org/3/search/tv?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1&query=the%20office&include_adult=false
+
+GET DATAILS TV SHOWS
+https://api.themoviedb.org/3/tv/{tv_id}?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US
+
+TV RATED
+https://api.themoviedb.org/3/tv/top_rated?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US&page=1
+
+TV SEASONS
+https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US
+
+TV EPISODES
+https://api.themoviedb.org/3/tv/{tv_id}/season/{season_number}/episode/{episode_number}?api_key=540095a1bf72e74dd8872af32ee83ef2&language=en-US
