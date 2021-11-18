@@ -6,11 +6,9 @@ def index():
 
 def cadastro():
     nome = request.form['Nome']
-    idade = request.form['Idade']
     email = request.form['Email']
     senha = request.form['Senha']
-    perfilUsuario = request.form['perfilUsuario']
-    ctrlUser = adicionarUser(nome,idade,email,senha,perfilUsuario)
+    ctrlUser = adicionarUser(nome,email,senha)
 
     if ctrlUser == True:
         return redirect(url_for("login.index"))

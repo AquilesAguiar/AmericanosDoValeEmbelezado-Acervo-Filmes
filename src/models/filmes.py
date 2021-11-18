@@ -8,7 +8,7 @@ class filmes():
         return req['results']
 
     def getFilmes(self,nome):
-        filmes = f"https://api.themoviedb.org/3/search/movie?api_key=540095a1bf72e74dd8872af32ee83ef2&language=pt-BR&query={nome}&include_adult=false"
+        filmes = f"https://api.themoviedb.org/3/search/movie?api_key=540095a1bf72e74dd8872af32ee83ef2&language=pt-BR&query={nome}"
         req = requests.get(filmes)
         req = req.json()
         return req['results']
@@ -26,7 +26,7 @@ class filmes():
         return req['results']
 
     def getFilmesAtores(self,ator):
-        atorFilmes = f"https://api.themoviedb.org/3/search/person?api_key=540095a1bf72e74dd8872af32ee83ef2&language=pt-BR&query={ator}&include_adult=false"
+        atorFilmes = f"https://api.themoviedb.org/3/search/person?api_key=540095a1bf72e74dd8872af32ee83ef2&language=pt-BR&query={ator}"
         req = requests.get(atorFilmes)
         req = req.json()
         return req['results']
