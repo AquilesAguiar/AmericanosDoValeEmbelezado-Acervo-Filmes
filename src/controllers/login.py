@@ -12,7 +12,7 @@ def logar():
 
     if ctrlUser == True:
         user = dadosUser(email,senha)
-        return render_template('index.html',user=user)
+        return redirect(url_for("principal.index"))
 
     flash('Email ou senha errados')
-    return redirect(url_for('index'))
+    return redirect(url_for('login.index'))

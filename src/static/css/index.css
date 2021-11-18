@@ -1,0 +1,61 @@
+body{
+    font-family: 'Source Serif Pro', serif;
+    color: white !important;
+}
+header{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 50px;
+}
+.centerImg{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#linhaHeader{
+    margin-top: 7px;
+    width: 100%;
+}
+#logo{
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 20pt;
+}
+.busca{
+    outline: 0;   
+}
+.container{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 5px;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    display: inline-block;
+}
+ul a{
+    font-size: 15pt;
+    text-decoration: none;
+    margin-left: 10px;
+    color: black;
+}
+ul a:hover{
+    font-size: 15pt;
+    text-decoration: none;
+    margin-left: 10px;
+    color:rgb(59, 79, 255);
+    transition: .7s;
+}
+img{
+    height: 350px;
+    border-radius: 10px;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 150px;
+    margin-top: 25px;
+}
