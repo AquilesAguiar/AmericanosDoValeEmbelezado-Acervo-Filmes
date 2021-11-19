@@ -7,6 +7,9 @@ def index():
     return render_template('index.html',emCartaz=Filmes.getFilmesEmCartaz())
 
 def pesqFilmes():
-    filmePesq = request.get_json()
-    print(filmePesq)
+    filmePesq = request.args.get('filme')
     return render_template('infoFilmes.html',Filmes=Filmes.getFilmes(filmePesq))
+
+def alugar():
+    
+    return 200

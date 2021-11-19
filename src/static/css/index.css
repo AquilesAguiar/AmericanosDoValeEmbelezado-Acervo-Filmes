@@ -35,15 +35,27 @@ ul{
 ul li{
     display: inline-block;
 }
+
+.inicio{
+    text-align: center;
+}
+.inicio a{
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.inicio a:hover{
+    text-decoration: none !important;
+}
+
 ul a{
     font-size: 15pt;
-    text-decoration: none;
     margin-left: 10px;
     color: black;
 }
+
 ul a:hover{
     font-size: 15pt;
-    text-decoration: none;
     margin-left: 10px;
     color:rgb(59, 79, 255);
     transition: .7s;

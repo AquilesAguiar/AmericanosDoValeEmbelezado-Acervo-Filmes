@@ -37,25 +37,33 @@
             <section class="categorias">
                 <div class="row">
                     <div class="col">
-                        <h1 id="acao">Filmes Em Cartaz</h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col" >
+               
+                <div id="Inicio" class="row">
+                    <div class="col">
                         {%for cont in range(Filmes | length)%}
                             <div id="{{Filmes[loop.index0].id}}" class="row">
                                 <div class="col-2"></div>
                                 <div class="col-6">
-                                    <h4>{{Filmes[loop.index0].title}}</h4>
+                                    <h2>{{Filmes[loop.index0].title}}</h2>
                                     <p>{{Filmes[loop.index0].overview}}</p>
                                     <p>Data: {{Filmes[loop.index0].release_date}}</p>
                                     <p>Notas: {{Filmes[loop.index0].vote_average}}</p>
+                                    <a href="#" class="btn btn-outline-primary">Alugar</a>
                                 </div>
                                 <div class="col-4">
                                     <img src="https://image.tmdb.org/t/p/original/{{Filmes[loop.index0].poster_path}}" class="d-block w-30 h-40" alt="{{Filmes[loop.index0].title}}">
                                 </div>
+                                <span class="inicio">
+                                    <a href="#Inicio" style="text-align: center;">Voltar Ao Inicio</a>
+                                </span>
                             </div>
+                            
+                            <hr>
+                            
                         {%endfor%}
+                        
                     </div>
                 </div>
             </section>
