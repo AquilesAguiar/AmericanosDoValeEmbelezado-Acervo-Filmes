@@ -1,6 +1,7 @@
 from flask import render_template,redirect,request,redirect,flash,url_for
 from models.filmes import filmes
 from pprint import pprint
+from random import uniform
 
 Filmes = filmes()
 def index():    
@@ -8,8 +9,17 @@ def index():
 
 def pesqFilmes():
     filmePesq = request.args.get('filme')
-    return render_template('infoFilmes.html',Filmes=Filmes.getFilmes(filmePesq))
+    FilmesCl = Filmes.getFilmes(filmePesq)
+    FilmesRecomend = Filmes.getRecomendacao(FilmesCl[0]['id'])
+    return render_template('infoFilmes.html',Filmes=FilmesCl,FilmesRecomend=FilmesRecomend)
 
 def alugar():
-    
-    return 200
+    preco = round(uniform(20.00,99.99),2)
+    filmeAluguel = request.args.get('filme')
+    FilmesCl = Filmes.getFilmeID(filmeAluguel)
+    return render_template("alugar.html",filme=FilmesCl,preco=preco)
+
+def finalizarAluguel():
+    dadosAluguel = request.get_json()
+    print(dadosAluguel)
+    return {'success': True}

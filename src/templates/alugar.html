@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS LINK -->
+        <link rel="stylesheet" href="../static/css/index.css">
+        <!-- BOOTSTRAP LINK -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- FONT LINK -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500&display=swap" rel="stylesheet">
+        <title>ILVM - Aluguel</title>
+    </head>
+    <body style="background-color:gray;">
+        <header>
+            <div class="row" id="linhaHeader">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <div id="logo">💲ILVM⏳</div>
+                </div>
+                <div class="col-5">
+                    <input id="pesqFilmes" type="text" class="form-control busca" value="{{filme.title}}">
+                </div>
+                <div class="col-4">
+                    <button id="botaoPesq" class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </header>
+        <div class="container" style="background-color:black;">
+            <div id="alertaAluguel" class="row alert alert-success" role="alert" style="display:none; ">
+                <div class="col-10">
+                    Aluguel Realizado com sucesso !!!!
+                </div>
+                <div class="col-2">
+                    <p id="fechaAlert">X</p>
+                </div>
+            </div>
+
+            <section class="categorias">
+                <div class="row">
+                    <div class="col">
+                    </div>
+                </div>
+               
+                <div id="Inicio" class="row">
+                    <div class="col">
+                        <div id="{{filme.id}}" class="row">
+                            <input id="idFilme" type="hidden" value="{{filme.id}}">
+                            <div class="col-2"></div>
+                            <div class="col-6">
+                                <h2>{{filme.title}}</h2>
+                                <p>{{filme.overview}}</p>
+                                <p>Data: {{filme.release_date}}</p>
+                                <p>Notas: {{filme.vote_average}}</p>
+                                <p>Preço: {{preco}}</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="https://image.tmdb.org/t/p/original/{{filme.poster_path}}" class="d-block w-30 h-40" alt="{{filme.title}}">
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-6">
+                        <label for="titularCartao" class="form-label">Titular do Cartão:</label>
+                        <input type="text" id="titularCartao" name="titularCartao" class="form-control">
+                    
+                        <label for="cartao" class="form-label">Numero Cartão:</label>
+                        <input type="text" id = "cartao" name="cartao" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="CVV" class="form-label">CVV:</label>
+                        <input type="text" id="CVV" name="CVV" class="form-control">
+                        
+                        <label for="venct" class="form-label">Data de Vencimento:</label>
+                        <input type="date" id="venct" name="venct" class="form-control">
+                    </div>
+                        
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <button id="aluguelConfirma" type="button" class="btn btn-outline-success" style="margin-top:10px; width:100%">Alugar</button>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>Aquiles Aguiar, Caio Machado, Gabriel Passos - Ucl Manguinhos, 2021 </p>
+        </footer>
+        <!-- SCRIPT BOOTSTRAP -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="../static/js/index.js"></script>
+    </body>
+</html>

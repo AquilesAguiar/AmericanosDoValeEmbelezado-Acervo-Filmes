@@ -23,10 +23,10 @@
             <div class="row" id="linhaHeader">
                 <div class="col-1"></div>
                 <div class="col-2">
-                    <div id="logo">ILVM</div>
+                    <div id="logo">💲ILVM⏳</div>
                 </div>
                 <div class="col-5">
-                    <input id="pesqFilmes" type="text" class="form-control busca">
+                    <input id="pesqFilmes" type="text" class="form-control busca" value="{{Filmes[0].title}}">
                 </div>
                 <div class="col-4">
                     <button id="botaoPesq" class="btn btn-primary">Buscar</button>
@@ -42,33 +42,79 @@
                
                 <div id="Inicio" class="row">
                     <div class="col">
-                        {%for cont in range(Filmes | length)%}
-                            <div id="{{Filmes[loop.index0].id}}" class="row">
-                                <div class="col-2"></div>
-                                <div class="col-6">
-                                    <h2>{{Filmes[loop.index0].title}}</h2>
-                                    <p>{{Filmes[loop.index0].overview}}</p>
-                                    <p>Data: {{Filmes[loop.index0].release_date}}</p>
-                                    <p>Notas: {{Filmes[loop.index0].vote_average}}</p>
-                                    <a href="#" class="btn btn-outline-primary">Alugar</a>
-                                </div>
-                                <div class="col-4">
-                                    <img src="https://image.tmdb.org/t/p/original/{{Filmes[loop.index0].poster_path}}" class="d-block w-30 h-40" alt="{{Filmes[loop.index0].title}}">
-                                </div>
-                                <span class="inicio">
-                                    <a href="#Inicio" style="text-align: center;">Voltar Ao Inicio</a>
-                                </span>
+                        <div id="{{Filmes[0].id}}" class="row">
+                            <div class="col-2"></div>
+                            <div class="col-6">
+                                <h2>{{Filmes[0].title}}</h2>
+                                <p>{{Filmes[0].overview}}</p>
+                                <p>Data: {{Filmes[0].release_date}}</p>
+                                <p>Notas: {{Filmes[0].vote_average}}</p>
+                                <a href="http://127.0.0.1:8787/filmes/alugar?filme={{Filmes[0].id}}" class="btn btn-outline-primary">Alugar</a>
                             </div>
-                            
-                            <hr>
-                            
-                        {%endfor%}
+                            <div class="col-4">
+                                <img src="https://image.tmdb.org/t/p/original/{{Filmes[0].poster_path}}" class="d-block w-30 h-40" alt="{{Filmes[0].title}}">
+                            </div>
+                        </div>
                         
+                        <hr>
+                        
+                    </div>
+                </div>
+                <h2>Filmes Recomendados</h2>
+                <div class="row" >
+                    <div id="filmesRecomend" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {%for cont in range(FilmesRecomend | length)%}
+                                {%if loop.first%}
+                                    <div class="carousel-item active">
+                                        <div id="{{FilmesRecomend[loop.index0].id}}" class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-6">
+                                                <h4>{{FilmesRecomend[loop.index0].title}}</h4>
+                                                <p>{{FilmesRecomend[loop.index0].overview}}</p>
+                                                <p>Data: {{FilmesRecomend[loop.index0].release_date}}</p>
+                                                <p>Notas: {{FilmesRecomend[loop.index0].vote_average}}</p>
+                                                <a href="http://127.0.0.1:8787/filmes/alugar?filme={{FilmesRecomend[loop.index0].id}}" class="btn btn-outline-primary">Alugar</a>
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://image.tmdb.org/t/p/original/{{FilmesRecomend[loop.index0].poster_path}}" class="d-block w-30 h-40" alt="{{FilmesRecomend[loop.index0].title}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                {%else%}
+    
+                                    <div class="carousel-item">
+                                        <div id="{{FilmesRecomend[loop.index0].id}}" class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col-6">
+                                                <h4>{{FilmesRecomend[loop.index0].title}}</h4>
+                                                <p>{{FilmesRecomend[loop.index0].overview}}</p>
+                                                <p>Data: {{FilmesRecomend[loop.index0].release_date}}</p>
+                                                <p>Notas: {{FilmesRecomend[loop.index0].vote_average}}</p>
+                                                <a href="http://127.0.0.1:8787/filmes/alugar?filme={{FilmesRecomend[loop.index0].id}}" class="btn btn-outline-primary">Alugar</a>
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://image.tmdb.org/t/p/original/{{FilmesRecomend[loop.index0].poster_path}}" class="d-block w-30 h-40" alt="{{FilmesRecomend[loop.index0].original_title}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                {%endif%}
+                            {%endfor%}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#filmesRecomend" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#filmesRecomend" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </section>
         </div>
-        <footer>
+        <footer style="margin-top: 20px !important;">
             <p>Aquiles Aguiar, Caio Machado, Gabriel Passos - Ucl Manguinhos, 2021 </p>
         </footer>
         <!-- SCRIPT BOOTSTRAP -->
