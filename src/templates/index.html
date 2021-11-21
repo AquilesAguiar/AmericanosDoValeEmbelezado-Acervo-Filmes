@@ -23,7 +23,7 @@
             <div class="row" id="linhaHeader">
                 <div class="col-1"></div>
                 <div class="col-2">
-                    <div id="logo">💲ILVM⏳</div>
+                    <div id="logo"><a href="http://127.0.0.1:8787/filmes/"> 💲ILVM⏳ </a> </div>
                 </div>
                 <div class="col-5">
                     <input id="pesqFilmes" type="text" class="form-control busca">
@@ -91,13 +91,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="row" style="margin-top: 30px;">
+                    
+                    <div id="chart_div"></div>
+                </div>
+
             </section>
         </div>
-        <footer>
+        <footer style="margin-top: 30px;">
             <p>Aquiles Aguiar, Caio Machado, Gabriel Passos - Ucl Manguinhos, 2021 </p>
         </footer>
         <!-- SCRIPT BOOTSTRAP -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="../static/js/index.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="../static/js/filmesGrafico.js"></script>
     </body>
 </html>

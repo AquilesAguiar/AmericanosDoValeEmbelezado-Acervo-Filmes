@@ -1,5 +1,6 @@
 from flask import render_template,redirect,request,redirect,flash,url_for
 from models.filmes import filmes
+from  models.aluguelFilmes import *
 from pprint import pprint
 from random import uniform
 
@@ -22,4 +23,8 @@ def alugar():
 def finalizarAluguel():
     dadosAluguel = request.get_json()
     print(dadosAluguel)
+    adicionarFilme(dadosAluguel['id'])
     return {'success': True}
+
+def graficoFilmes():
+    return retornaFilmesGrafico()
