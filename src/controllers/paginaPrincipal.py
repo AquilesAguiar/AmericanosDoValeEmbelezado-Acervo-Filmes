@@ -11,6 +11,8 @@ def index():
 def pesqFilmes():
     filmePesq = request.args.get('filme')
     FilmesCl = Filmes.getFilmes(filmePesq)
+    if FilmesCl == []:
+        return render_template("pageError.html")
     FilmesRecomend = Filmes.getRecomendacao(FilmesCl[0]['id'])
     return render_template('infoFilmes.html',Filmes=FilmesCl,FilmesRecomend=FilmesRecomend)
 
@@ -22,8 +24,8 @@ def alugar():
 
 def finalizarAluguel():
     dadosAluguel = request.get_json()
-    print(dadosAluguel)
-    adicionarFilme(dadosAluguel['id'])
+    nome = Filmes.getFilmeID(dadosAluguel['id'])["title"]
+    adicionarFilme(dadosAluguel['id'],nome)
     return {'success': True}
 
 def graficoFilmes():
